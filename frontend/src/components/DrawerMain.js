@@ -1,5 +1,6 @@
 import { COLORS } from '@/styles/colors-variables';
-import { Drawer } from '@mui/material';
+import { Drawer, Toolbar } from '@mui/material';
+import DrawerItemListing from './DrawerItemListing';
 
 const DrawerMain = () => {
 
@@ -20,6 +21,8 @@ const DrawerMain = () => {
           },
         }}
       >
+        <Toolbar sx={{ height: '5em' }} />
+        <DrawerItemListing />
       </Drawer>
     </div>
   );
