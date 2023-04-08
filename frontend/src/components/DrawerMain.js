@@ -1,5 +1,6 @@
 import { COLORS } from '@/styles/colors-variables';
 import { Drawer, Toolbar } from '@mui/material';
+import ButtonTweet from './ButtonTweet';
 import DrawerItemListing from './DrawerItemListing';
 
 const DrawerMain = () => {
@@ -21,8 +22,10 @@ const DrawerMain = () => {
           },
         }}
       >
-        <Toolbar sx={{ height: '5em' }} />
+        <Toolbar />
         <DrawerItemListing />
+        <Toolbar />
+        <ButtonTweet />
       </Drawer>
     </div>
   );
