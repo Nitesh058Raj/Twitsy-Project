@@ -1,13 +1,3 @@
-:root{
-  --black: #000;
-  --white: #fff;
-  --main-primary: #66d9e8;
-
-  --main-secondary: #0b7285;
-  --main-light-secondary: #0c8599;
-  --main-light-secondary-2: #1098ad;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
 * {
