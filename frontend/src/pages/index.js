@@ -8,6 +8,7 @@ export default function Home() {
       </Head>
       {/* <SearchBar /> */}
       {/* <DrawerMain /> */}
+      {/* <ExplorerBox users={users}/> */}
     </>
   )
 }
