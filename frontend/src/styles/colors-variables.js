@@ -14,3 +14,4 @@ export const COLORS = {
   main_light_secondary: "#0c8599",
   main_light_secondary_2: "#1098ad",
 }
+
