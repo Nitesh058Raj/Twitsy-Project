@@ -1,20 +1,18 @@
 import { COLORS } from '@/styles/colors-variables';
-import { ExpandCircleDown, Home, Notifications, Person } from '@mui/icons-material';
+import { Home, Bookmark } from '@mui/icons-material';
 import { List, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material';
 import React from 'react';
 
 const DrawerItemListing = () => {
-  const [active, setActive] = React.useState([false, false, false, false]);
-  const ItemList = ['Home', 'Notifications', 'Profile', 'More'];
-  const ItemIconList = ['Home', 'Notifications', 'Person', 'ExpandCircleDown'];
+  const [active, setActive] = React.useState([false, false]);
+  const ItemList = ['Home', 'My Tweets'];
+  const ItemIconList = ['Home', 'Bookmark'];
 
   const onListItemClicked = (id) => {
     const updatedActive = active.map((isActive, index) => {
-      if (index === id) {
-        return true;
-      } else {
-        return false;
-      }
+      return (
+        index === id ? true : false
+      )
     });
     setActive(updatedActive);
   };
@@ -23,12 +21,8 @@ const DrawerItemListing = () => {
     switch (item) {
       case 'Home':
         return <Home fontSize="large" sx={{ color: clicked ? COLORS.primary : 'white' }} />;
-      case 'Notifications':
-        return <Notifications fontSize="large" sx={{ color: clicked ? COLORS.primary : 'white' }} />;
-      case 'Person':
-        return <Person fontSize="large" sx={{ color: clicked ? COLORS.primary : 'white' }} />;
-      case 'ExpandCircleDown':
-        return <ExpandCircleDown fontSize="large" sx={{ color: clicked ? COLORS.primary : 'white' }} />;
+      case 'Bookmark':
+        return <Bookmark fontSize="large" sx={{ color: clicked ? COLORS.primary : 'white' }} />;
       default:
         return null;
     }
@@ -36,8 +30,6 @@ const DrawerItemListing = () => {
   return (
     <div>
       <List sx={{ padding: 0 }}>
-        {/* <Divider sx={{ backgroundColor: 'gray' }} /> */}
-
         {ItemList.map((item, key) => {
           return (
             <ListItemButton

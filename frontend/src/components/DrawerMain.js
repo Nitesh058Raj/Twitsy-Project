@@ -2,6 +2,9 @@ import { COLORS } from '@/styles/colors-variables';
 import { Drawer, Toolbar } from '@mui/material';
 import ButtonTweet from './ButtonTweet';
 import DrawerItemListing from './DrawerItemListing';
+import Logo from "../assets/Logo.png";
+import Image from 'next/image';
+import { CONSTANTS } from '@/styles/app-constants';
 
 const DrawerMain = () => {
 
@@ -17,15 +20,25 @@ const DrawerMain = () => {
           flexShrink: 0,
           boxSizing: 'border-box',
           '& .MuiDrawer-paper': {
-            width: 328,
+            width: CONSTANTS.drawer_width,
             backgroundColor: COLORS.background_dark,
           },
         }}
       >
-        <Toolbar />
+        <Toolbar sx={{ mt: '5vh', mb: '10vh' }}>
+          <Image
+            src={Logo} height={50}
+            style={{ cursor: 'pointer'}}
+            onClick={()=>{}}
+          />
+        </Toolbar>
         <DrawerItemListing />
-        <Toolbar />
-        <ButtonTweet />
+        <Toolbar sx={{
+          mt: '5vh', display: 'flex',
+          justifyContent: 'center'
+        }}>
+          <ButtonTweet />
+        </Toolbar>
       </Drawer>
     </div>
   );
