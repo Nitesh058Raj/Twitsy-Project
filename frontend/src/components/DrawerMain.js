@@ -16,11 +16,11 @@ const DrawerMain = () => {
         elevation={20}
         sx={{
           opacity: 1,
-          width: 280,
+          width: CONSTANTS.left_drawer_width,
           flexShrink: 0,
           boxSizing: 'border-box',
           '& .MuiDrawer-paper': {
-            width: CONSTANTS.drawer_width,
+            width: CONSTANTS.left_drawer_width,
             backgroundColor: COLORS.background_dark,
           },
         }}

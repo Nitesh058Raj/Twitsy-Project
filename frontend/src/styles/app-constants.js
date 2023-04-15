@@ -1,3 +1,4 @@
 export const CONSTANTS = {
-  drawer_width: 328
+  left_drawer_width: 330,
+  right_drawer_width: 360
 }
