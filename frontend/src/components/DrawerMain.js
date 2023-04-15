@@ -27,7 +27,7 @@ const DrawerMain = () => {
       >
         <Toolbar sx={{ mt: '5vh', mb: '10vh' }}>
           <Image
-            src={Logo} height={50}
+            src={Logo} alt="Logo" height={50}
             style={{ cursor: 'pointer'}}
             onClick={()=>{}}
           />
