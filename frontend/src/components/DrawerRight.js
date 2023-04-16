@@ -1,7 +1,8 @@
-import { Box, Drawer } from '@mui/material';
+import { Box, Divider, Drawer } from '@mui/material';
 import { COLORS } from '@/styles/colors-variables';
 import { CONSTANTS } from '@/styles/app-constants';
 import SearchBar from './SearchBar';
+import ProfileBox from './ProfileBox';
 
 const DrawerRight = () => {
 
@@ -25,6 +26,9 @@ const DrawerRight = () => {
         <Box sx={{ p: 2}}>
           <SearchBar />
         </Box>
+        <Divider sx={{ mt: 15 }}/>
+        <ProfileBox />
+        <Divider />
       </Drawer>
     </div>
   );
