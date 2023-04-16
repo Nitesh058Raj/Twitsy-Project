@@ -25,7 +25,7 @@ const SearchBar = () => {
         fullWidth
         variant="outlined"
         placeholder='Search'
-        autoComplete={false}
+        autoComplete="off"
         inputProps={{ sx: {
             paddingLeft: 3,
             fontSize: 20,

@@ -16,18 +16,18 @@ const DrawerMain = () => {
         elevation={20}
         sx={{
           opacity: 1,
-          width: 280,
+          width: CONSTANTS.left_drawer_width,
           flexShrink: 0,
           boxSizing: 'border-box',
           '& .MuiDrawer-paper': {
-            width: CONSTANTS.drawer_width,
+            width: CONSTANTS.left_drawer_width,
             backgroundColor: COLORS.background_dark,
           },
         }}
       >
         <Toolbar sx={{ mt: '5vh', mb: '10vh' }}>
           <Image
-            src={Logo} height={50}
+            src={Logo} alt="Logo" height={50}
             style={{ cursor: 'pointer'}}
             onClick={()=>{}}
           />

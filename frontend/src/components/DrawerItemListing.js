@@ -1,20 +1,29 @@
 import { COLORS } from '@/styles/colors-variables';
 import { Home, Bookmark } from '@mui/icons-material';
 import { List, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 const DrawerItemListing = () => {
   const [active, setActive] = React.useState([false, false]);
+  const router = useRouter();
   const ItemList = ['Home', 'My Tweets'];
   const ItemIconList = ['Home', 'Bookmark'];
 
-  const onListItemClicked = (id) => {
+  const onListItemClicked = (id, tab) => {
     const updatedActive = active.map((isActive, index) => {
       return (
         index === id ? true : false
       )
     });
     setActive(updatedActive);
+
+    if(tab === "Home") {
+      router.push("/home")
+    } else if (tab === "My Tweets") {
+      router.push("/mytweets")
+    }
+
   };
 
   const getIcon = (item, clicked) => {
@@ -44,7 +53,7 @@ const DrawerItemListing = () => {
                 borderLeftColor: (theme) =>
                   theme.palette.mode === 'dark' && active[key] ? COLORS.primary : COLORS.background_dark,
               }}
-              onClick={() => onListItemClicked(key)}
+              onClick={() => onListItemClicked(key, item)}
             >
               <ListItemIcon>{getIcon(ItemIconList[key], active[key])}</ListItemIcon>
               <ListItemText primary={<Typography sx={{ fontSize: 28 }}> {item} </Typography>} />
