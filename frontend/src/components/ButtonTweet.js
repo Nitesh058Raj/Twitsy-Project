@@ -14,10 +14,11 @@ const ButtonTweet=()=>{
     },
   }));
     return(
-      <Box sx={{
-        display: 'flex', justifyContent: 'center'
-      }}>
-        <ColorButton variant="contained">Tweet</ColorButton>
+      <Box>
+        <ColorButton
+          variant="contained"
+          onClick={()=>{}}
+        >Tweet</ColorButton>
       </Box>
     );
 }

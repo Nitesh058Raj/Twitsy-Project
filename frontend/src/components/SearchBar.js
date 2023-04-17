@@ -2,28 +2,37 @@ import { COLORS } from '@/styles/colors-variables';
 import { TextField, styled } from '@mui/material';
 
 const SearchBar = () => {
-  const MyTextField = styled(TextField)({
+
+  const SearchTextField = styled(TextField)({
     '& .MuiOutlinedInput-root': {
-      backgroundColor: COLORS.main_light_secondary_2,
+      borderRadius: 50,
+      backgroundColor: COLORS.background_dark,
       '& fieldset': {
-        borderColor: COLORS.main_light_secondary,
+        borderColor: COLORS.border_default,
       },
       '&:hover fieldset': {
-        borderColor: COLORS.main_light_secondary,
-        border: '1px solid'
+        border: `2px solid ${COLORS.border_hover}`
       },
       '&.Mui-focused fieldset': {
-        borderColor: COLORS.main_light_secondary,
-        border: '1px solid'
+        border: `2px solid ${COLORS.primary}`
       },
     },
   });
 
   return (
     <div>
-      <MyTextField label="Search" variant="outlined" />
+      <SearchTextField
+        fullWidth
+        variant="outlined"
+        placeholder='Search'
+        autoComplete="off"
+        inputProps={{ sx: {
+            paddingLeft: 3,
+            fontSize: 20,
+        }}}
+        onChange={()=>{}}
+      />
     </div>
   );
 };
 export default SearchBar;
-
