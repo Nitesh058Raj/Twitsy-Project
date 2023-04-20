@@ -6,10 +6,10 @@ const Router = express.Router();
 
 Router.route('/tweet')
     .post(createTweet)
-    .get(getTweet);
+    .get(getTweets);
 
 Router.route('/tweet/:id')
-    .get(getTweets);
+    .get(getTweet);
 
 Router.route('/user')
     .post(createUser);
