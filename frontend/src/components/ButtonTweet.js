@@ -1,7 +1,7 @@
-import { COLORS } from "@/styles/colors-variables";
-import { Box, Button, styled } from "@mui/material";
+import { COLORS } from '@/styles/colors-variables';
+import { Box, Button, styled } from '@mui/material';
 
-const ButtonTweet=()=>{
+const ButtonTweet = () => {
   const ColorButton = styled(Button)(({ theme }) => ({
     fontSize: 25,
     textTransform: 'none',
@@ -13,13 +13,12 @@ const ButtonTweet=()=>{
       backgroundColor: COLORS.primary_hover,
     },
   }));
-    return(
-      <Box>
-        <ColorButton
-          variant="contained"
-          onClick={()=>{}}
-        >Tweet</ColorButton>
-      </Box>
-    );
-}
+  return (
+    <Box>
+      <ColorButton variant="contained" onClick={() => {}}>
+        Tweet
+      </ColorButton>
+    </Box>
+  );
+};
 export default ButtonTweet;

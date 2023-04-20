@@ -5,7 +5,6 @@ import SearchBar from './SearchBar';
 import ProfileBox from './ProfileBox';
 
 const DrawerRight = () => {
-
   return (
     <div>
       <Drawer
@@ -23,10 +22,10 @@ const DrawerRight = () => {
           },
         }}
       >
-        <Box sx={{ p: 2}}>
+        <Box sx={{ p: 2 }}>
           <SearchBar />
         </Box>
-        <Divider sx={{ mt: 15 }}/>
+        <Divider sx={{ mt: 15 }} />
         <ProfileBox />
         <Divider />
       </Drawer>
