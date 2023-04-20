@@ -63,7 +63,7 @@ export const getTweet = (req, res) => {
 export const createTweet = (req, res) => {
   logger.info(`${req.method} : ${req.originalUrl} , creating tweet...`);
 
-  database.query(QUERY.TWEET.CREATE, params, (error, results) => {
+  database.query(QUERY.TWEET.CREATE, Object.values(req.body), (error, results) => {
     if (error) {
       res
         .status(HttpStatus.INTERNAL_SERVER_ERROR.code)
