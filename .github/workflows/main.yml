@@ -1,7 +1,7 @@
 name: CICD Over ECS(AWS)
 on:
   push:
-    branches: "cicd/deploy"
+    branches: ["cicd/deploy"]
 
     # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -22,9 +22,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-south-1
 
-       - name: Login to AWS ECR
-         id: login-ecr                            # store as var like ansible
-         uses: aws-actions/amazon-ecr-login@v1
+      - name: Login to AWS ECR
+        id: login-ecr                            # store as var like ansible
+        uses: aws-actions/amazon-ecr-login@v1
 
       # Building two images 
       #  - name: Build and push Docker image
@@ -35,13 +35,13 @@ jobs:
       #      push: true
       #      tags: ${{ secrets.REPO_NAME }}:${{ github.sha }}   # sha will generate unique tag every time
     
-       - name: Terraform apply
-         env:
-           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-           REPO_NAME: ${{ secrets.REPO_NAME }}
-           TAG: ${{ github.sha }}
-         run: |
+      - name: Terraform apply
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          REPO_NAME: ${{ secrets.REPO_NAME }}
+          TAG: ${{ github.sha }}
+        run: |
           cd terraform
           terraform init 
           terraform destroy --auto-approve  # for removing existing Infra on aws
