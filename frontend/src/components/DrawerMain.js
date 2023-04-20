@@ -2,12 +2,11 @@ import { COLORS } from '@/styles/colors-variables';
 import { Drawer, Toolbar } from '@mui/material';
 import ButtonTweet from './ButtonTweet';
 import DrawerItemListing from './DrawerItemListing';
-import Logo from "../assets/Logo.png";
+import Logo from '../assets/Logo.png';
 import Image from 'next/image';
 import { CONSTANTS } from '@/styles/app-constants';
 
 const DrawerMain = () => {
-
   return (
     <div>
       <Drawer
@@ -26,17 +25,16 @@ const DrawerMain = () => {
         }}
       >
         <Toolbar sx={{ mt: '5vh', mb: '10vh' }}>
-          <Image
-            src={Logo} alt="Logo" height={50}
-            style={{ cursor: 'pointer'}}
-            onClick={()=>{}}
-          />
+          <Image src={Logo} alt="Logo" height={50} style={{ cursor: 'pointer' }} onClick={() => {}} />
         </Toolbar>
         <DrawerItemListing />
-        <Toolbar sx={{
-          mt: '5vh', display: 'flex',
-          justifyContent: 'center'
-        }}>
+        <Toolbar
+          sx={{
+            mt: '5vh',
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
           <ButtonTweet />
         </Toolbar>
       </Drawer>

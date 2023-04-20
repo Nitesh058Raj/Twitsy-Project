@@ -12,18 +12,15 @@ const DrawerItemListing = () => {
 
   const onListItemClicked = (id, tab) => {
     const updatedActive = active.map((isActive, index) => {
-      return (
-        index === id ? true : false
-      )
+      return index === id ? true : false;
     });
     setActive(updatedActive);
 
-    if(tab === "Home") {
-      router.push("/home")
-    } else if (tab === "My Tweets") {
-      router.push("/mytweets")
+    if (tab === 'Home') {
+      router.push('/home');
+    } else if (tab === 'My Tweets') {
+      router.push('/mytweets');
     }
-
   };
 
   const getIcon = (item, clicked) => {
